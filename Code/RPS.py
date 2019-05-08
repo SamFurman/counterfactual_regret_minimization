@@ -79,9 +79,10 @@ class RPSTrainer():
 
 
     def train(self, iterations, oppMode):
+        fixedStrat = [.5,.3,.2]
         for epoch in range(iterations):
             currStrategy = self.getStrategy()
-            oppCurrStrategy = self.getStrategyOpp() if oppMode == 1 else [.33,.33,.34]
+            oppCurrStrategy = self.getStrategyOpp() if oppMode == 1 else fixedStrat
             myAction = self.getAction(currStrategy)
             otherAction = self.getAction(oppCurrStrategy)
             utilities = self.computeUtilies(myAction, otherAction)
@@ -92,7 +93,7 @@ class RPSTrainer():
                 self.oppRegretSum[i] += oppUtilities[i] - oppUtilities[otherAction]
 
             self.strats.append(self.getAverageStrategy())
-            self.oppStrats.append(self.getOppAverageStrategy())
+            self.oppStrats.append(self.getOppAverageStrategy() if oppMode == 1 else fixedStrat)
 
 
     def getAverageStrategy(self):
@@ -134,9 +135,13 @@ class RPSTrainer():
         rocks = stratDF['Rock']
         papers = stratDF['Paper']
         scissors = stratDF['Scissors']
-        plt.plot(index, rocks)
-        plt.plot(index, papers)
-        plt.plot(index, scissors)
+        plt.title('Convergence of Player Strategy when CFR vs Fixed')
+        plt.ylabel('Action Probability')
+        plt.xlabel('Training Iterations')
+        plt.plot(index, rocks, label ='Rock')
+        plt.plot(index, papers, label = 'Paper')
+        plt.plot(index, scissors, label = 'Scissors')
+        plt.legend(loc='upper right')
         plt.show()
 
     def visualizeOppStrategies(self):
@@ -145,13 +150,17 @@ class RPSTrainer():
         rocks = oppStratDF['Rock']
         papers = oppStratDF['Paper']
         scissors = oppStratDF['Scissors']
-        plt.plot(index, rocks)
-        plt.plot(index, papers)
-        plt.plot(index, scissors)
+        plt.title('Convergence of Opponent Strategy when CFR vs Fixed')
+        plt.ylabel('Action Probability')
+        plt.xlabel('Training Iterations')
+        plt.plot(index, rocks, label ='Rock')
+        plt.plot(index, papers, label = 'Paper')
+        plt.plot(index, scissors, label = 'Scissors')
+        plt.legend(loc='upper right')
         plt.show()
 
 if __name__ == "__main__":
     trainer = RPSTrainer()
-    trainer.train(100000, 1)
+    trainer.train(100000, 0)
     trainer.visualizeStrategies()
     trainer.visualizeOppStrategies()

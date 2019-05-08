@@ -175,12 +175,17 @@ class LDTrainer():
         print('\nOld Claim\tRoll\tAction Probabilities')
         for oppClaim in range(0, sides):
             for roll in range(1, sides + 1):
-                print('\t{0:d}\t{1:d}\t{2:s}\n'.format(oppClaim, roll, str(self.claimNodes[oppClaim][roll].getAverageStrategy())))
+                print('\t{0:d}\t{1:d}\t{2:s}\n'.format(
+                    oppClaim, 
+                    roll, 
+                    str(self.claimNodes[oppClaim][roll].getAverageStrategy()
+                )))
+                print('regrets', self.claimNodes[oppClaim][roll].regretSum)
 
 
 
 
 if __name__ == "__main__":
     sides = 6
-    iterations = 100000
+    iterations = 1000
     LDTrainer(6).train(iterations)

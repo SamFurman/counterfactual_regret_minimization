@@ -6,7 +6,8 @@ Author: Samuel Furman
 """
 
 import random
-import pandas as pd
+import pandas as pd 
+from time import sleep
 from matplotlib import pyplot as plt 
 NUM_ACTIONS = 2
 
@@ -125,6 +126,7 @@ class KPTrainer():
         if plays > 1:
             payoff = terminalPayoff(cards, history, plays, player, opponent)
             if payoff:
+                #print(player, cards, history, payoff)
                 return payoff
 
 
@@ -153,4 +155,4 @@ class KPTrainer():
 
 
 if __name__ == "__main__":
-    KPTrainer().train(1000000)
+    KPTrainer().train(100000)

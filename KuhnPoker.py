@@ -155,4 +155,5 @@ class KPTrainer():
 
 
 if __name__ == "__main__":
-    KPTrainer().train(100000)
+    iterations = 100000
+    KPTrainer().train(iterations)

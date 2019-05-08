@@ -15,10 +15,12 @@ I probably don't need to rehash what rock paper scissors entails but I will do s
 I mentioned above that RPS is considered a one-shot game.  This is because each player makes a single decision and the game reaches a terminal state.  This makes RPS and equivalently complex games a great playgroud for exploring CFR ideas.
 ### Approach
 ### Results
+
 ![alt text](Images/RPS_CFRvFixed_Opp.png "Logo Title Text 1")
+![alt text](Images/RPS_CFRvFixed_Player.png "Logo Title Text 1")
+
 ![alt text](Images/RPS_CFRvCFR_Player.png "Logo Title Text 1")
 ![alt text](Images/RPS_CFRvCFR_Opp.png "Logo Title Text 1")
-![alt text](Images/RPS_CFRvFixed_Player.png "Logo Title Text 1")
 
 ## Kuhn Poker
 ### Rules
@@ -28,4 +30,6 @@ I mentioned above that RPS is considered a one-shot game.  This is because each 
 ### Rules
 ### Approach
 ### Results
+
 ## Conclusion
+The current form of my code is much less modular than I was expecting.  Much of the structure of my CFR algorithm is tied down 

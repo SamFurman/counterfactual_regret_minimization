@@ -246,3 +246,13 @@ There seems to be a problem accumulating regrets for claim nodes because they de
 The current form of my code is much less modular than I was expecting. Much of the structure of my CFR algorithms are tied down to game specific details. For example, classifying the descision nodes as either claim or response nodes specializes the algorithm for liar die. Another example of this is the encoding of information sets in a dictionary indexed by a string. The paper makes mention that its pseudocode is not close to the best implementation of these algorithms and that they were aiming for the most evocative/understandable representation.  The other implementation for Kuhn poker I linked above is more faithful to the theory. There is a lot of room left to grow in terms of my understanding of CFR.  I would first like to get my Kuhn poker and Liar Die algorithms nailed down and then move on to 3-player games.  Moreover, the paper features discussion on prunning the game tree after the converging strategy indicates that a particular path of play in unviable.  Deep CFR offers even another layer by using deep neural networks to approximate the behavior of CFR for especially large game trees.  This comes with the added benefit of avoiding some game-specific heuristics that are usually required to make large game trees tractable.
 
 ## References
+
+[1] Todd W. Neller and Marc Lanctot. *An Introduction to Counterfactual Regret Minimization*. Netherlands Organisation for Scientific Research, 2013.
+
+[2] Sam Ganzfried, Tuomas Sandholm, and Kevin Waugh. Strategy purification and thresholding: Effective non-equilibrium approaches for playing large games. In *Proceedings of the International Conference on Autonomous Agents and Multiagent Systems (AAMAS)*, 2012.
+
+[3] Kevin Layton-Brown and Yoav Shoham. *Essentials of Game Theory: A Concise, Multidisciplinary Introduction*. Morgan and Claypool Publishers, 2008
+
+[4]  Martin Zinkevich, Michael Johanson, Michael Bowling, and Carmelo Piccione. Regret minimization in games with incomplete information. In J.C. Platt, D. Koller, Y. Singer, and S. Roweis, editors, *Advances in Neural Information Processing Systems 20*, pages 1729–1736. MIT Press, Cambridge,
+MA, 2008.
+

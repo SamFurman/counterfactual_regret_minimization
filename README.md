@@ -61,10 +61,11 @@ Here are graphs for the second situation in the same format both the opponent an
 ![alt text](Images/RPS_CFRvCFR_Player.png "Logo Title Text 1")
 
 
-
 ## Kuhn Poker
 
 ### Rules
+
+As I mentioned above Kuhn Poker is a step 
 
 ### Approach
 

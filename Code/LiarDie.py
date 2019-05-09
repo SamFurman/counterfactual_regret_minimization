@@ -124,6 +124,7 @@ class LDTrainer():
                         node.regretSum[i] += node.pOpponent * regret[i]
 
                     node.pPlayer = node.pOpponent = 0
+                    
                 #visit response nodes backward
                 if oppClaim > 0:
                     for myClaim in range(0, oppClaim):
@@ -187,5 +188,5 @@ class LDTrainer():
 
 if __name__ == "__main__":
     sides = 6
-    iterations = 1000
+    iterations = 10000
     LDTrainer(6).train(iterations)
